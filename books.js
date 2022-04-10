@@ -2,6 +2,9 @@
 
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
 
 const mongoose = require('mongoose');
 
@@ -14,9 +17,9 @@ app.get('/', (req, res) => {
 });
 
 // create func
-app.post('/books', (req, res) => {
+app.post('/book', (req, res) => {
   console.log(req.body);
-  res.send('This is our create endpoint');
+  res.send('00:D');
 });
 
 app.listen(4545, () => {
