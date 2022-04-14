@@ -29,10 +29,10 @@ app.post('/book', (req, res) => {
   };
 
   // Create a new Book
-  let book = new Book(newBook);
+  let Book = new Book(newBook);
 
   // Save objects in collection
-  book
+  Book
     .save()
     .then(() => {
       console.log('New book create!');
@@ -45,9 +45,11 @@ app.post('/book', (req, res) => {
 
   console.log(req.body);
   res.send('A new book created with success');
-});
 
 
+app.get("books", (req, res) => {
+  
+})
 
 app.listen(4545, () => {
   console.log('Book Server is running on port 4545');
