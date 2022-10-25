@@ -52,7 +52,7 @@ app.get('/book/:id', (req, res) => {
       if (book) {
         res.json(book);
       } else {
-        res.send(404);
+        res.sendStatus(404);
       }
     })
     .catch((err) => {
