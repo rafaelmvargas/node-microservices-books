@@ -62,6 +62,18 @@ app.get('/book/:id', (req, res) => {
     });
 });
 
+app.delete('/book/:id', (req, res) => {
+  Book.findOneAndRemove(req.params.id)
+    .then(() => {
+      res.send('Book was removed successfully');
+    })
+    .catch((err) => {
+      if (err) {
+        throw err;
+      }
+    });
+});
+
 app.listen(4545, () => {
   console.log('Book Server is running on port 4545');
 });
